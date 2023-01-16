@@ -36,9 +36,9 @@
           { "summary": "Sets or gets the type of divider displayed under the element.",
             "description":
               [ "The divider type can be:",
-                "* \"long\"",
-                "* \"short\"",
-                "* \"none\"" ],
+                "* `\"long\"`",
+                "* `\"short\"`",
+                "* `\"none\"`" ],
             "links": [],
             "examples":
               [ { "title": "Get an element's divider type",
