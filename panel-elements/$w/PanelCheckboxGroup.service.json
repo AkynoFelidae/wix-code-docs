@@ -4,14 +4,14 @@
     [ "$w.HiddenCollapsedMixin",
       "$w.Element" ],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "PanelCheckboxGroup.js" },
   "docs":
     { "summary": "Checkbox groups are used for selecting any number of the given options.",
       "description":
-        [ "Checkbox groups consist of a list of options. Each option contains a label, which is what the user sees, and a value, which is what is used in code.",
+        [ "Checkbox groups consist of a list of options. Each option has a label, which is what the user sees, and a value, which is what is used in code.",
           "",
           "> **Important**:  ",
           "> This element is available only in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons)." ],
