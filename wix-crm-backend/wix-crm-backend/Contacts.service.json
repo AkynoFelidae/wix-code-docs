@@ -220,7 +220,8 @@
         "extra":
           {  } },
       { "name": "createContact",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "contactInfo",
@@ -242,7 +243,19 @@
         "docs":
           { "summary": "Creates a new contact.",
             "description":
-              [ "<!--ONLY:REST",
+              [ "<blockquote class=\"important dev-preview\">",
+                "",
+                "__Developer Preview__ <br />",
+                "APIs in Developer Preview are intended for testing and are",
+                "[subject to change](#).",
+                "They are not recommended for use in production. <br />",
+                "[Send us](#)",
+                "your suggestions for improving this API.",
+                "Your feedback is valuable to us.",
+                "",
+                "</blockquote>",
+                "",
+                "<!--ONLY:REST",
                 "The request body must include a name, a phone number, or an email address.",
                 "If all 3 of these parameters are missing,",
                 "the contact won't be created.",
