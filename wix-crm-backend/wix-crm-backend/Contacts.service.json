@@ -243,7 +243,9 @@
         "docs":
           { "summary": "Creates a new contact.",
             "description":
-              [ "<blockquote class=\"important dev-preview\">",
+              [ "![sample image](images/dev_preview_note.png)",
+                "",
+                "<blockquote class=\"important dev-preview\">",
                 "",
                 "__Developer Preview__  ",
                 "APIs in Developer Preview are intended for testing and are",
