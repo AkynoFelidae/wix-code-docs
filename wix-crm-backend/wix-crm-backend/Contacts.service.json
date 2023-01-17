@@ -9,7 +9,9 @@
   "docs":
     { "summary": "The Contacts API is used to manage a site's contacts.",
       "description":
-        [ "When a new visitor first shares some of their contact information with your site,",
+        [ "![sample image](../../assets/images/dev_preview_note.png)",
+          "",
+          "When a new visitor first shares some of their contact information with your site,",
           "they're added to your",
           "[Contact List](https://www.wix.com/my-account/site-selector/?buttonText=Select%20Site&title=Select%20a%20Site&autoSelectOnSingleSite=true&actionUrl=https:%2F%2Fwww.wix.com%2Fdashboard%2F%7B%7BmetaSiteId%7D%7D%2Fcontacts).",
           "Once that happens, their details are available through the Contacts API.",
@@ -243,9 +245,7 @@
         "docs":
           { "summary": "Creates a new contact.",
             "description":
-              [ "![sample image](../../assets/images/dev_preview_note.png)",
-                "",
-                "<!--ONLY:REST",
+              [ "<!--ONLY:REST",
                 "The request body must include a name, a phone number, or an email address.",
                 "If all 3 of these parameters are missing,",
                 "the contact won't be created.",
