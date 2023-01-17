@@ -83,7 +83,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "delete",
@@ -146,7 +151,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "list",
@@ -346,7 +356,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "updateSchedule",
@@ -420,7 +435,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     }
   ],
   "messages": [
