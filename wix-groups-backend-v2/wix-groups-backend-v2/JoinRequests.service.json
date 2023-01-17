@@ -78,7 +78,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "listJoinGroupRequests",
@@ -149,7 +154,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "queryJoinGroupRequests",
@@ -222,7 +232,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "rejectJoinGroupRequests",
@@ -293,7 +308,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     }
   ],
   "messages": [
