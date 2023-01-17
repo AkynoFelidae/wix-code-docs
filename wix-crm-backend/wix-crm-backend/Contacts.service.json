@@ -245,10 +245,10 @@
             "description":
               [ "<blockquote class=\"important dev-preview\">",
                 "",
-                "__Developer Preview__ <br>",
+                "__Developer Preview__  ",
                 "APIs in Developer Preview are intended for testing and are",
                 "[subject to change](#).",
-                "They are not recommended for use in production. <br>",
+                "They are not recommended for use in production.  ",
                 "[Send us](#)",
                 "your suggestions for improving this API.",
                 "Your feedback is valuable to us.",
