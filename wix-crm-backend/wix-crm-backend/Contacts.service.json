@@ -243,7 +243,7 @@
         "docs":
           { "summary": "Creates a new contact.",
             "description":
-              [ "![sample image](images/dev_preview_note.png)",
+              [ "![sample image](../../assets/images/dev_preview_note.png)",
                 "",
                 "<blockquote class=\"important dev-preview\">",
                 "",
