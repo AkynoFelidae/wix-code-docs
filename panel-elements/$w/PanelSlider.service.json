@@ -83,11 +83,12 @@
         "extra":
           {  } },
       { "name": "max",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "number",
-        "defaultValue": "false",
+        "defaultValue": "10",
         "locations":
           [ { "lineno": 172,
               "filename": "PanelSlider.js" },
@@ -117,7 +118,7 @@
         "get": true,
         "set": true,
         "type": "number",
-        "defaultValue": "0",
+        "defaultValue": "1",
         "locations":
           [ { "lineno": 151,
               "filename": "PanelSlider.js" },
@@ -142,11 +143,12 @@
         "extra":
           {  } },
       { "name": "showNumericInput",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "boolean",
-        "defaultValue": "false",
+        "defaultValue": "true",
         "locations":
           [ { "lineno": 131,
               "filename": "PanelSlider.js" },
@@ -171,11 +173,12 @@
         "extra":
           {  } },
       { "name": "step",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "number",
-        "defaultValue": "false",
+        "defaultValue": "1",
         "locations":
           [ { "lineno": 193,
               "filename": "PanelSlider.js" },
@@ -200,11 +203,12 @@
         "extra":
           {  } },
       { "name": "suffix",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
-        "defaultValue": "Empty string",
+        "defaultValue": "\"number\"",
         "locations":
           [ { "lineno": 105,
               "filename": "PanelSlider.js" },
