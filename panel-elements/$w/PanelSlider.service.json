@@ -3,14 +3,15 @@
   "mixes":
     [ "$w.HiddenCollapsedMixin",
       "$w.Element" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "PanelSlider.js" },
   "docs":
     { "summary": "Sliders allow users to select a number from a given range.",
       "description":
-        [ "Sliders offer your users a way to input a number by sliding a \"handle\" one way or the other along a track. You can set the range of values for the slider and also its default value.",
+        [ "Sliders offer site creators a way to input a number by sliding a \"handle\" one way or the other along a track. You can set the range of values for the slider and also its default value.",
           "",
           "> **Important**:  ",
           "> This element is available only in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons)." ],
@@ -111,11 +112,12 @@
         "extra":
           {  } },
       { "name": "min",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "number",
-        "defaultValue": "false",
+        "defaultValue": "0",
         "locations":
           [ { "lineno": 151,
               "filename": "PanelSlider.js" },
