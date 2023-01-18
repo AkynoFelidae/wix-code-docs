@@ -3,14 +3,16 @@
   "mixes":
     [ "$w.HiddenCollapsedMixin",
       "$w.Element" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "PanelRichText.js" },
   "docs":
     { "summary": "A rich text element is used to display text followed by a link.",
       "description":
-        [ "> **Important**:  ",
+        [ "A rich text element is used to display text followed by a link. ",
+          "> **Important**:  ",
           "> This element is available only in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons)." ],
       "links": [],
       "examples": [],
@@ -24,9 +26,9 @@
         "type": "boolean",
         "defaultValue": "false",
         "locations":
-          [ { "lineno": 76,
+          [ { "lineno": 77,
               "filename": "PanelRichText.js" },
-            { "lineno": 88,
+            { "lineno": 89,
               "filename": "PanelRichText.js" } ],
         "docs":
           { "summary": "Sets or gets whether the text is centered.",
@@ -52,9 +54,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 16,
+          [ { "lineno": 17,
               "filename": "PanelRichText.js" },
-            { "lineno": 27,
+            { "lineno": 28,
               "filename": "PanelRichText.js" } ],
         "docs":
           { "summary": "Sets or gets the rich text content (without the link).",
@@ -81,9 +83,9 @@
         "type": "string",
         "defaultValue": "\"long\"",
         "locations":
-          [ { "lineno": 97,
+          [ { "lineno": 98,
               "filename": "PanelRichText.js" },
-            { "lineno": 114,
+            { "lineno": 115,
               "filename": "PanelRichText.js" } ],
         "docs":
           { "summary": "Sets or gets the type of divider displayed under the element.",
@@ -115,9 +117,9 @@
         "type": "string",
         "defaultValue": "Empty string",
         "locations":
-          [ { "lineno": 34,
+          [ { "lineno": 35,
               "filename": "PanelRichText.js" },
-            { "lineno": 46,
+            { "lineno": 47,
               "filename": "PanelRichText.js" } ],
         "docs":
           { "summary": "Sets or gets the link's text.",
@@ -144,9 +146,9 @@
         "type": "string",
         "defaultValue": "Empty string",
         "locations":
-          [ { "lineno": 55,
+          [ { "lineno": 56,
               "filename": "PanelRichText.js" },
-            { "lineno": 67,
+            { "lineno": 68,
               "filename": "PanelRichText.js" } ],
         "docs":
           { "summary": "Sets or gets the link's URL.",

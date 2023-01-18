@@ -3,7 +3,8 @@
   "mixes":
     [ "$w.HiddenCollapsedMixin",
       "$w.Element" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "PanelDropdown.js" },
@@ -26,9 +27,9 @@
         "type": "string",
         "defaultValue": "\"long\"",
         "locations":
-          [ { "lineno": 98,
+          [ { "lineno": 97,
               "filename": "PanelDropdown.js" },
-            { "lineno": 115,
+            { "lineno": 114,
               "filename": "PanelDropdown.js" } ],
         "docs":
           { "summary": "Sets or gets the type of divider displayed under the element.",
@@ -90,9 +91,9 @@
             "typeParams":
               [ "$w.PanelDropdown.option" ] },
         "locations":
-          [ { "lineno": 123,
+          [ { "lineno": 122,
               "filename": "PanelDropdown.js" },
-            { "lineno": 137,
+            { "lineno": 136,
               "filename": "PanelDropdown.js" } ],
         "docs":
           { "summary": "Sets or gets the options in the dropdown.",
@@ -129,15 +130,15 @@
         "extra":
           {  } },
       { "name": "placeholder",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
-        "defaultValue": "'Choose an option'",
         "locations":
           [ { "lineno": 77,
               "filename": "PanelDropdown.js" },
-            { "lineno": 91,
+            { "lineno": 90,
               "filename": "PanelDropdown.js" } ],
         "docs":
           { "summary": "Sets or gets the placeholder text of an element.",
@@ -233,7 +234,7 @@
           { "type": "$w.Element",
             "doc": "The element on which the event is now registered." },
         "locations":
-          [ { "lineno": 154,
+          [ { "lineno": 153,
               "filename": "PanelDropdown.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when an input element's value\n is changed.",
@@ -267,7 +268,7 @@
   "messages":
     [ { "name": "option",
         "locations":
-          [ { "lineno": 144,
+          [ { "lineno": 143,
               "filename": "PanelDropdown.js" } ],
         "docs":
           { "summary": "An object representing a dropdown option.",
