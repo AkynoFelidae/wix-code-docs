@@ -231,7 +231,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "querySessions",
@@ -314,7 +319,12 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     }
   ],
   "messages": [
