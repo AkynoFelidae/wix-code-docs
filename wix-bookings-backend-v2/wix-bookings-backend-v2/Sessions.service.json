@@ -60,21 +60,18 @@
           {
             "title": "getSession example",
             "body": [
-              "",
-              "    ",
-              "    import { sessions } from 'wix-bookings-backend.v2';",
+              "import { sessions } from 'wix-bookings-backend.v2';",
               "  ",
-              "    ",
-              "    async function getSession(id, options) {",
-              "      try {",
-              "        const result = await sessions.getSession(id, options);",
+              " async function getSession(id, options) {",
+              "   try {",
+              "     const result = await sessions.getSession(id, options);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "     }",
+              " }",
               "  "
             ]
           }
@@ -145,21 +142,18 @@
           {
             "title": "listSessions example",
             "body": [
-              "",
-              "    ",
-              "    import { sessions } from 'wix-bookings-backend.v2';",
+              "import { sessions } from 'wix-bookings-backend.v2';",
               "  ",
-              "    ",
-              "    async function listSessions(ids, options) {",
-              "      try {",
-              "        const result = await sessions.listSessions(ids, options);",
+              " async function listSessions(ids, options) {",
+              "   try {",
+              "     const result = await sessions.listSessions(ids, options);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "     }",
+              " }",
               "  "
             ]
           }
@@ -211,21 +205,18 @@
           {
             "title": "queryEventSessionInstances example",
             "body": [
-              "",
-              "    ",
-              "    import { sessions } from 'wix-bookings-backend.v2';",
+              "import { sessions } from 'wix-bookings-backend.v2';",
               "  ",
-              "    ",
-              "    async function queryEventSessionInstances(options) {",
-              "      try {",
-              "        const result = await sessions.queryEventSessionInstances(options);",
+              " async function queryEventSessionInstances(options) {",
+              "   try {",
+              "     const result = await sessions.queryEventSessionInstances(options);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "     }",
+              " }",
               "  "
             ]
           }
@@ -260,7 +251,7 @@
               "nativeType": "Promise",
               "typeParams": [
                 {
-                  "referenceType": "wix-bookings-backend-v2.Sessions.V2QuerySessionsResponse"
+                  "referenceType": "wix-bookings-backend-v2.Sessions.QuerySessionsResponse"
                 }
               ]
             }
@@ -306,14 +297,11 @@
           {
             "title": "querySessions example",
             "body": [
-              "",
-              "    ",
-              "    import { sessions } from 'wix-bookings-backend.v2';",
+              "import { sessions } from 'wix-bookings-backend.v2';",
               "  ",
-              "    ",
-              "    async function querySessions() {",
-              "      const { items } = sessions.querySessions().find();",
-              "    }",
+              " async function querySessions() {",
+              "   const { items } = sessions.querySessions().find();",
+              " }",
               "  "
             ]
           }
@@ -852,7 +840,7 @@
               "nativeType": "number"
             }
           ],
-          "doc": "Number of sessions to return.\n\nDefault: `50`\nMax: `1000`\n"
+          "doc": "Number of sessions to return.\nDefaults to `50`. Maximum `1000`."
         }
       ],
       "docs": {
@@ -873,6 +861,16 @@
             }
           ],
           "doc": "Cursor pointing to next page in the list of results."
+        },
+        {
+          "name": "prev",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Cursor pointing to previous page in the list of results."
         }
       ],
       "docs": {
@@ -892,7 +890,7 @@
               "referenceType": "wix-bookings-backend-v2.Sessions.CommonCursorPaging"
             }
           ],
-          "doc": "Cursor token pointing to a page of results.\nNot used in the first request.\nFollowing requests use the cursor token and not `filter`."
+          "doc": "Cursor token pointing to a page of results. Not used in the first request. Following requests use the cursor token and not `query.filter`."
         },
         {
           "name": "fieldsets",
@@ -909,7 +907,7 @@
               }
             }
           ],
-          "doc": "Predefined sets of fields to return.\n- `NO_PI`: Returns session objects without personal information.\n- `ALL_PI`: Returns complete session objects, including personal information. Requires the CALENDAR.SESSION_READ_PI permission scope.\n\nDefault: `NO_PI`\n"
+          "doc": "Supported values: `ALL_PI`.\n\nPredefined sets of fields to return.\n\n- `ALL_PI`: Returns complete session objects.\n\nIf you don't pass a value in the `fieldsets` array, session objects without\npersonal information are returned by default. This means without `participants`,\n`location`, `calendarConference`, and `externalCalendarOverrides`.\n"
         },
         {
           "name": "filter",
@@ -919,7 +917,7 @@
               "nativeType": "Object"
             }
           ],
-          "doc": "Filter object. For field support for filters, see\n[Sessions: Supported Filters](./filtering).\nSee [API Query Language](https://dev.wix.com/api/rest/getting-started/api-query-language) for more information about querying with filters."
+          "doc": "Filter object.\nSee [API Query Language](https://dev.wix.com/api/rest/getting-started/api-query-language)\nfor more information.\n\nExample of operators: `$eq`, `$ne`, `$lt`, `$lte`, `$gt`, `$gte`, `$in`, `$hasSome`, `$hasAll`, `$startsWith`, `$contains`.\n\nFor a detailed list of supported filters, see\n[Supported Filters](https://dev.wix.com/api/rest/wix-bookings/calendar-v2/filters).\n"
         }
       ],
       "extra": {
@@ -949,7 +947,7 @@
               "referenceType": "wix-bookings-backend-v2.Sessions.CommonCursorPaging"
             }
           ],
-          "doc": "Cursor token pointing to a page of results.\nNot used in the first request.\nFollowing requests use the cursor token and not `filter`."
+          "doc": "Cursor token pointing to a page of results. Not used in the first request. Following requests use the cursor token and not `query.filter`."
         }
       ],
       "docs": {
@@ -1018,7 +1016,7 @@
               "nativeType": "number"
             }
           ],
-          "doc": "Number of sessions to return.\nDefaults to `50`. Maximum `1000`."
+          "doc": "Number of sessions to return.\n\nDefault: `50`\nMax: `1000`\n"
         }
       ],
       "docs": {
@@ -1045,7 +1043,7 @@
           "optional": true,
           "type": [
             {
-              "referenceType": "wix-bookings-backend-v2.Sessions.CommonCursors"
+              "referenceType": "wix-bookings-backend-v2.Sessions.Cursors"
             }
           ],
           "doc": "Cursors to navigate through the result pages."
@@ -1079,16 +1077,6 @@
             }
           ],
           "doc": "Cursor pointing to next page in the list of results."
-        },
-        {
-          "name": "prev",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": "Cursor pointing to previous page in the list of results."
         }
       ],
       "docs": {
@@ -2080,7 +2068,7 @@
           "optional": true,
           "type": [
             {
-              "referenceType": "wix-bookings-backend-v2.Sessions.Cursors"
+              "referenceType": "wix-bookings-backend-v2.Sessions.CommonCursors"
             }
           ],
           "doc": "Cursors to navigate through the result pages using `next` and `prev`. Returned if cursor paging is used."
@@ -2301,7 +2289,7 @@
           "optional": true,
           "type": [
             {
-              "referenceType": "wix-bookings-backend-v2.Sessions.QueryV2"
+              "referenceType": "wix-bookings-backend-v2.Sessions.CommonQueryV2"
             }
           ],
           "doc": "Information about filters, paging, and returned fields."
@@ -2341,7 +2329,7 @@
           "optional": true,
           "type": [
             {
-              "referenceType": "wix-bookings-backend-v2.Sessions.QueryV2"
+              "referenceType": "wix-bookings-backend-v2.Sessions.CommonQueryV2"
             }
           ],
           "doc": "Information about filters, paging, and returned fields."
@@ -2428,7 +2416,7 @@
           "optional": true,
           "type": [
             {
-              "referenceType": "wix-bookings-backend-v2.Sessions.CommonQueryV2"
+              "referenceType": "wix-bookings-backend-v2.Sessions.QueryV2"
             }
           ],
           "doc": "Query options."
@@ -2471,7 +2459,17 @@
               "nativeType": "Date"
             }
           ],
-          "doc": "Start of the time range for which sessions are returned\nin [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)).\nRequired, if `query.cursorPaging` is omitted.\n`end.timestamp` of all returned sessions is greater than or equal to `fromDate`."
+          "doc": "Required, unless `instance` is `false` or `query.cursorPaging` is provided.\nStart of the time range for which sessions are returned,\nin [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)).\n\nSessions that begin before the `fromDate` but end after it are included in the results.\n"
+        },
+        {
+          "name": "instance",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "boolean"
+            }
+          ],
+          "doc": "Whether to return only single sessions and individual instances of recurring sessions.\nTo query for recurring session pattern definitions, set to `false`.\n\nDefault: `true`.\n"
         },
         {
           "name": "query",
@@ -2481,7 +2479,7 @@
               "referenceType": "wix-bookings-backend-v2.Sessions.QueryV2"
             }
           ],
-          "doc": "Information about filters, paging, and returned fields."
+          "doc": "Query options."
         },
         {
           "name": "toDate",
@@ -2491,7 +2489,17 @@
               "nativeType": "Date"
             }
           ],
-          "doc": "End of the time range for which sessions are returned\nin [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)).\nRequired, if `query.cursorPaging` is omitted.\n`start.timestamp` of all returned sessions is less than or equal to `toDate`."
+          "doc": "Required, unless `instance` is `false` or `query.cursorPaging` is provided.\nEnd of the time range for which sessions are returned,\nin [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)).\n\nSessions that begin before the `toDate` but end after it are included in the results.\n\nMax: 1 year after `fromDate`.\n"
+        },
+        {
+          "name": "type",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Type of sessions to return.\n\nDefault: `UNDEFINED`. This returns sessions of all types.\n"
         }
       ],
       "docs": {
@@ -2508,7 +2516,7 @@
           "optional": true,
           "type": [
             {
-              "referenceType": "wix-bookings-backend-v2.Sessions.PagingMetadataV2"
+              "referenceType": "wix-bookings-backend-v2.Sessions.CursorPagingMetadata"
             }
           ],
           "doc": "Paging metadata."
@@ -2528,7 +2536,7 @@
               }
             }
           ],
-          "doc": "Retrieved sessions."
+          "doc": "List of sessions matching the query."
         }
       ],
       "docs": {
@@ -2548,7 +2556,7 @@
               "referenceType": "wix-bookings-backend-v2.Sessions.CursorPaging"
             }
           ],
-          "doc": "Cursor token pointing to a page of results. Not used in the first request. Following requests use the cursor token and not `query.filter`."
+          "doc": "Cursor token pointing to a page of results.\nNot used in the first request.\nFollowing requests use the cursor token and not `filter`."
         },
         {
           "name": "fieldsets",
@@ -2565,7 +2573,7 @@
               }
             }
           ],
-          "doc": "Supported values: `ALL_PI`.\n\nPredefined sets of fields to return.\n\n- `ALL_PI`: Returns complete session objects.\n\nIf you don't pass a value in the `fieldsets` array, session objects without\npersonal information are returned by default. This means without `participants`,\n`location`, `calendarConference`, and `externalCalendarOverrides`.\n"
+          "doc": "Predefined sets of fields to return.\n- `NO_PI`: Returns session objects without personal information.\n- `ALL_PI`: Returns complete session objects, including personal information. Requires the CALENDAR.SESSION_READ_PI permission scope.\n\nDefault: `NO_PI`\n"
         },
         {
           "name": "filter",
@@ -2575,7 +2583,7 @@
               "nativeType": "Object"
             }
           ],
-          "doc": "Filter object.\nSee [API Query Language](https://dev.wix.com/api/rest/getting-started/api-query-language)\nfor more information.\n\nExample of operators: `$eq`, `$ne`, `$lt`, `$lte`, `$gt`, `$gte`, `$in`, `$hasSome`, `$hasAll`, `$startsWith`, `$contains`.\n\nFor a detailed list of supported filters, see\n[Supported Filters](https://dev.wix.com/api/rest/wix-bookings/calendar-v2/filters).\n"
+          "doc": "Filter object. For field support for filters, see\n[Sessions: Supported Filters](./filtering).\nSee [API Query Language](https://dev.wix.com/api/rest/getting-started/api-query-language) for more information about querying with filters."
         }
       ],
       "extra": {
@@ -2605,7 +2613,7 @@
               "referenceType": "wix-bookings-backend-v2.Sessions.CursorPaging"
             }
           ],
-          "doc": "Cursor token pointing to a page of results. Not used in the first request. Following requests use the cursor token and not `query.filter`."
+          "doc": "Cursor token pointing to a page of results.\nNot used in the first request.\nFollowing requests use the cursor token and not `filter`."
         }
       ],
       "docs": {
@@ -3742,17 +3750,7 @@
               "nativeType": "Date"
             }
           ],
-          "doc": "Required, unless `instance` is `false` or `query.cursorPaging` is provided.\nStart of the time range for which sessions are returned,\nin [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)).\n\nSessions that begin before the `fromDate` but end after it are included in the results.\n"
-        },
-        {
-          "name": "instance",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "boolean"
-            }
-          ],
-          "doc": "Whether to return only single sessions and individual instances of recurring sessions.\nTo query for recurring session pattern definitions, set to `false`.\n\nDefault: `true`.\n"
+          "doc": "Start of the time range for which sessions are returned\nin [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)).\nRequired, if `query.cursorPaging` is omitted.\n`end.timestamp` of all returned sessions is greater than or equal to `fromDate`."
         },
         {
           "name": "query",
@@ -3762,7 +3760,7 @@
               "referenceType": "wix-bookings-backend-v2.Sessions.CommonQueryV2"
             }
           ],
-          "doc": "Query options."
+          "doc": "Information about filters, paging, and returned fields."
         },
         {
           "name": "toDate",
@@ -3772,17 +3770,7 @@
               "nativeType": "Date"
             }
           ],
-          "doc": "Required, unless `instance` is `false` or `query.cursorPaging` is provided.\nEnd of the time range for which sessions are returned,\nin [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)).\n\nSessions that begin before the `toDate` but end after it are included in the results.\n\nMax: 1 year after `fromDate`.\n"
-        },
-        {
-          "name": "type",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": "Type of sessions to return.\n\nDefault: `UNDEFINED`. This returns sessions of all types.\n"
+          "doc": "End of the time range for which sessions are returned\nin [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Coordinated_Universal_Time_(UTC)).\nRequired, if `query.cursorPaging` is omitted.\n`start.timestamp` of all returned sessions is less than or equal to `toDate`."
         }
       ],
       "docs": {
@@ -3799,7 +3787,7 @@
           "optional": true,
           "type": [
             {
-              "referenceType": "wix-bookings-backend-v2.Sessions.CursorPagingMetadata"
+              "referenceType": "wix-bookings-backend-v2.Sessions.PagingMetadataV2"
             }
           ],
           "doc": "Paging metadata."
@@ -3819,7 +3807,7 @@
               }
             }
           ],
-          "doc": "List of sessions matching the query."
+          "doc": "Retrieved sessions."
         }
       ],
       "docs": {
