@@ -50,7 +50,7 @@ The above example produces this output:
 
 | Inbox                                                     | Chat Widget                                                           |
 | --------------------------------------------------------- | --------------------------------------------------------------------- |
-| ![Basic message in Wix Inbox](images/plain__inbox.png) | ![Basic message in the chat widget](images/plain__chat-widget.png) |
+| ![Basic message in Wix Inbox](images/collapsible_text.png.png) | ![Basic message in the chat widget](images/collapsible_text.png.png) |
 
 ## Form Messages
 
