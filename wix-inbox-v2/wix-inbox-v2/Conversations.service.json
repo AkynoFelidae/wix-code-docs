@@ -48,7 +48,7 @@
         ],
         "examples": [
           {
-            "title": "getConversation example",
+            "title": "GetConversation example",
             "body": [
               "import { conversations } from 'wix-inbox.v2';",
               "  ",
@@ -109,7 +109,7 @@
         "description": [],
         "examples": [
           {
-            "title": "getOrCreateConversation example",
+            "title": "GetOrCreateConversation example",
             "body": [
               "import { conversations } from 'wix-inbox.v2';",
               "  ",
