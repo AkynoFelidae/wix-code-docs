@@ -13,7 +13,7 @@
       "name": "getSession",
       "params": [
         {
-          "name": "sessionId",
+          "name": "_id",
           "type": [
             {
               "nativeType": "string"
@@ -34,7 +34,7 @@
         }
       ],
       "requiredFields": [
-        "sessionId"
+        "_id"
       ],
       "ret": {
         "type": [
@@ -62,9 +62,9 @@
             "body": [
               "import { sessions } from 'wix-bookings-backend.v2';",
               "  ",
-              " async function getSession(sessionId, options) {",
+              " async function getSession(id, options) {",
               "   try {",
-              "     const result = await sessions.getSession(sessionId, options);",
+              "     const result = await sessions.getSession(id, options);",
               "",
               "     return result;",
               "   } catch (error) {",
@@ -88,6 +88,23 @@
       "name": "listSessions",
       "params": [
         {
+          "name": "ids",
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "nativeType": "string"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "IDs of the sessions to retrieve.",
+          "required": true
+        },
+        {
           "name": "options",
           "type": [
             {
@@ -98,7 +115,9 @@
           "required": false
         }
       ],
-      "requiredFields": [],
+      "requiredFields": [
+        "ids"
+      ],
       "ret": {
         "type": [
           {
@@ -125,72 +144,9 @@
             "body": [
               "import { sessions } from 'wix-bookings-backend.v2';",
               "  ",
-              " async function listSessions(options) {",
+              " async function listSessions(ids, options) {",
               "   try {",
-              "     const result = await sessions.listSessions(options);",
-              "",
-              "     return result;",
-              "   } catch (error) {",
-              "     console.error(error);",
-              "     // Handle the error",
-              "     }",
-              " }",
-              "  "
-            ]
-          }
-        ]
-      },
-      "isVeloEvent": false,
-      "customLabels": [
-        {
-          "id": "maturity-beta"
-        }
-      ]
-    },
-    {
-      "name": "queryEventSessionInstances",
-      "params": [
-        {
-          "name": "options",
-          "type": [
-            {
-              "referenceType": "wix-bookings-backend-v2.Sessions.QueryEventSessionInstancesOptions"
-            }
-          ],
-          "doc": "",
-          "required": false
-        }
-      ],
-      "requiredFields": [],
-      "ret": {
-        "type": [
-          {
-            "complexType": {
-              "nativeType": "Promise",
-              "typeParams": [
-                {
-                  "referenceType": "wix-bookings-backend-v2.Sessions.QueryEventSessionInstancesResponse"
-                }
-              ]
-            }
-          }
-        ],
-        "doc": null
-      },
-      "docs": {
-        "summary": "Retrieves a list of event session instances, given the provided paging and filtering.",
-        "description": [
-          "By default session objects without any personal information are returned.\nThis means without `participants`, `location`, `calendarConference`, and\n`externalCalendarOverrides`. You can retrieve full session objects by passing\n`ALL_PI` in the `fieldsets` array. It isn't possible to retrieve sessions\nwith personal information just for specific participants.\n\n> __Note:__ Sessions are sorted by `start.timestamp`, in ascending order.\n> Other sorting options aren't supported.\n\n\nFor a detailed list of supported operations in the Bookings Calendar V2 API, see\n[filtering](https://dev.wix.com/api/rest/wix-bookings/calendar-v2/filters).\n\n\nTo learn about working with _Query_ endpoints, see\n[API Query Language](https://dev.wix.com/api/rest/getting-started/api-query-language)\nand [Sorting and Paging](https://dev.wix.com/api/rest/getting-started/sorting-and-paging)."
-        ],
-        "examples": [
-          {
-            "title": "queryEventSessionInstances example",
-            "body": [
-              "import { sessions } from 'wix-bookings-backend.v2';",
-              "  ",
-              " async function queryEventSessionInstances(options) {",
-              "   try {",
-              "     const result = await sessions.queryEventSessionInstances(options);",
+              "     const result = await sessions.listSessions(ids, options);",
               "",
               "     return result;",
               "   } catch (error) {",
@@ -1451,6 +1407,15 @@
       "name": "GetSessionRequest",
       "members": [
         {
+          "name": "_id",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of the session to retrieve."
+        },
+        {
           "name": "fieldsets",
           "optional": true,
           "type": [
@@ -1466,15 +1431,6 @@
             }
           ],
           "doc": "Supported values: `ALL_PI`.\n\nPredefined sets of fields to return.\n\n- `ALL_PI`: Returns complete session object.\n\nIf you don't pass a value in the `fieldsets` array, session object without\npersonal information is returned by default. This means without `participants`,\n`location`, `calendarConference`, and `externalCalendarOverrides`.\n"
-        },
-        {
-          "name": "sessionId",
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": "ID of the session to retrieve."
         }
       ],
       "docs": {
@@ -1563,23 +1519,6 @@
             }
           ],
           "doc": "Supported values: `ALL_PI`.\n\nPredefined sets of fields to return.\n\n- `ALL_PI`: Returns complete session objects.\n\nIf you don't pass a value in the `fieldsets` array, session objects without\npersonal information are returned by default. This means without `participants`,\n`location`, `calendarConference`, and `externalCalendarOverrides`.\n"
-        },
-        {
-          "name": "sessionIds",
-          "optional": true,
-          "type": [
-            {
-              "complexType": {
-                "nativeType": "Array",
-                "typeParams": [
-                  {
-                    "nativeType": "string"
-                  }
-                ]
-              }
-            }
-          ],
-          "doc": "IDs of the sessions to retrieve. Required."
         }
       ],
       "docs": {
@@ -1609,8 +1548,7 @@
           "doc": "Supported values: `ALL_PI`.\n\nPredefined sets of fields to return.\n\n- `ALL_PI`: Returns complete session objects.\n\nIf you don't pass a value in the `fieldsets` array, session objects without\npersonal information are returned by default. This means without `participants`,\n`location`, `calendarConference`, and `externalCalendarOverrides`.\n"
         },
         {
-          "name": "sessionIds",
-          "optional": true,
+          "name": "ids",
           "type": [
             {
               "complexType": {
@@ -1623,7 +1561,7 @@
               }
             }
           ],
-          "doc": "IDs of the sessions to retrieve. Required."
+          "doc": "IDs of the sessions to retrieve."
         }
       ],
       "docs": {
