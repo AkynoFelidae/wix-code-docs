@@ -44,7 +44,7 @@
         "description": [],
         "examples": [
           {
-            "title": "approveGroupRequests example",
+            "title": "ApproveGroupRequests example",
             "body": [
               "import { createRequests } from 'wix-groups-backend.v2';",
               "  ",
@@ -105,7 +105,7 @@
         "description": [],
         "examples": [
           {
-            "title": "listGroupRequests example",
+            "title": "ListGroupRequests example",
             "body": [
               "import { createRequests } from 'wix-groups-backend.v2';",
               "  ",
@@ -168,7 +168,7 @@
         ],
         "examples": [
           {
-            "title": "queryGroupRequests example",
+            "title": "QueryGroupRequests example",
             "body": [
               "import { createRequests } from 'wix-groups-backend.v2';",
               "  ",
@@ -229,7 +229,7 @@
         "description": [],
         "examples": [
           {
-            "title": "rejectGroupRequests example",
+            "title": "RejectGroupRequests example",
             "body": [
               "import { createRequests } from 'wix-groups-backend.v2';",
               "  ",
