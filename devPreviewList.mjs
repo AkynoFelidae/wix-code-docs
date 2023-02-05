@@ -26,7 +26,10 @@ function findDevPreviewFunctions() {
                if (!modules.hasOwnProperty(moduleName)) {
                    modules[moduleName] = {};
                }
-               modules[moduleName][jsonData.name] = previewFunctions
+               modules[moduleName][jsonData.name] = {
+                functions : previewFunctions,
+                memberOf : jsonData.memberOf.split('.').slice(1)
+               }
             }
         }
     };
@@ -38,8 +41,9 @@ function generateMDTable(data) {
     for(const module in data){
         for(const submodule in data[module]){
             let formattedFunctions = '';
-            for(const func of data[module][submodule]){
-                formattedFunctions += `[${func}](https://www.wix.com/velo/reference/${module}/${submodule.toLowerCase()}/${func.toLowerCase()})<br>`;
+            for(const func of data[module][submodule].functions){
+                const submodulePath = data[module][submodule].memberOf.length > 0 ? data[module][submodule].memberOf.join('/').toLowerCase() + '/' : '';
+                formattedFunctions += `[${func}](https://www.wix.com/velo/reference/${module}/${submodulePath}${submodule.toLowerCase()}/${func.toLowerCase()})<br>`;
             }
 
             table += `\n| ${module.replace(/(\S+)-(v[1-9])/gm, "$1.$2")} | ${submodule} | ${formattedFunctions} |`;
