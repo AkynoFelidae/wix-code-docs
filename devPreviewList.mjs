@@ -3,16 +3,11 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 import fs from 'fs';
 
-const folders_to_skip = []
+
 
 function findDevPreviewFunctions() {
     let modules = {};
     for (const file of getAllFilesSync('./')) {
-        for (const folder of folders_to_skip) {
-            if (file.includes(folder)) {
-                return;
-            }
-        }
         if (file.slice(-13) === '.service.json') {
             const previewFunctions = []
             let jsonData = require(file);
@@ -45,7 +40,6 @@ function generateMDTable(data) {
                 const submodulePath = data[module][submodule].memberOf.length > 0 ? data[module][submodule].memberOf.join('/').toLowerCase() + '/' : '';
                 formattedFunctions += `[${func}](https://www.wix.com/velo/reference/${module}/${submodulePath}${submodule.toLowerCase()}/${func.toLowerCase()})<br>`;
             }
-
             table += `\n| ${module.replace(/(\S+)-(v[1-9])/gm, "$1.$2")} | ${submodule} | ${formattedFunctions} |`;
         }
     }
