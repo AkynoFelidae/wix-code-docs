@@ -16,7 +16,7 @@
           "name": "conversationId",
           "type": [
             {
-              "nativeType": "string"
+              "nativeType": "Array"
             }
           ],
           "doc": "Conversation ID.",
